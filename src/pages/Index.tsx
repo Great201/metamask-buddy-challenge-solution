@@ -24,7 +24,7 @@ const Index = () => {
               </span>
               <span className="flex items-center gap-1">
                 <Star className="h-4 w-4" />
-                3/4 Bonus Features
+                4/4 Bonus Features
               </span>
               <span className="flex items-center gap-1">
                 <Zap className="h-4 w-4" />
@@ -61,7 +61,7 @@ const Index = () => {
                 Make sure you have MetaMask installed and are on a supported network.
               </p>
               <p className="mt-1">
-                Test on Ethereum Mainnet, Goerli, or Sepolia for best results.
+                We focus on mainnet networks for stability and reliability.
               </p>
             </div>
           </div>

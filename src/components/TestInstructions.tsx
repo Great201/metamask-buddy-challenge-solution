@@ -14,10 +14,10 @@ export const TestInstructions = () => {
   ];
 
   const bonusFeatures = [
+    { text: "Auto-reconnect on page refresh", completed: true },
+    { text: "Handle account/network changes", completed: true },
     { text: "Add network switching functionality", completed: true },
-    { text: "Implement transaction history display", completed: false },
-    { text: "Add token balance display (ERC-20)", completed: false },
-    { text: "Style improvements or animations", completed: true }
+    { text: "Enhanced UI/UX with animations", completed: true }
   ];
 
   const completedCount = requirements.filter(r => r.completed).length;

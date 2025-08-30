@@ -4,10 +4,10 @@ import { WalletState } from '@/types/wallet';
 // Chain ID to name mapping
 const CHAIN_NAMES: Record<string, string> = {
   '0x1': 'Ethereum Mainnet',
-  '0x5': 'Goerli Testnet',
-  '0xaa36a7': 'Sepolia Testnet',
   '0x89': 'Polygon Mainnet',
-  '0x13881': 'Mumbai Testnet',
+  '0xa': 'Optimism Mainnet',
+  '0xa4b1': 'Arbitrum One',
+  '0x38': 'BNB Smart Chain',
 };
 
 // Network configuration for switching
@@ -22,24 +22,6 @@ export const NETWORKS = [
     testnet: false,
   },
   {
-    chainId: '0x5',
-    name: 'Goerli',
-    fullName: 'Goerli Testnet',
-    rpcUrl: 'https://goerli.infura.io/v3/',
-    blockExplorer: 'https://goerli.etherscan.io',
-    currency: 'ETH',
-    testnet: true,
-  },
-  {
-    chainId: '0xaa36a7',
-    name: 'Sepolia',
-    fullName: 'Sepolia Testnet',
-    rpcUrl: 'https://sepolia.infura.io/v3/',
-    blockExplorer: 'https://sepolia.etherscan.io',
-    currency: 'ETH',
-    testnet: true,
-  },
-  {
     chainId: '0x89',
     name: 'Polygon',
     fullName: 'Polygon Mainnet',
@@ -49,13 +31,31 @@ export const NETWORKS = [
     testnet: false,
   },
   {
-    chainId: '0x13881',
-    name: 'Mumbai',
-    fullName: 'Mumbai Testnet',
-    rpcUrl: 'https://rpc-mumbai.maticvigil.com',
-    blockExplorer: 'https://mumbai.polygonscan.com',
-    currency: 'MATIC',
-    testnet: true,
+    chainId: '0xa',
+    name: 'Optimism',
+    fullName: 'Optimism Mainnet',
+    rpcUrl: 'https://mainnet.optimism.io',
+    blockExplorer: 'https://optimistic.etherscan.io',
+    currency: 'ETH',
+    testnet: false,
+  },
+  {
+    chainId: '0xa4b1',
+    name: 'Arbitrum',
+    fullName: 'Arbitrum One',
+    rpcUrl: 'https://arb1.arbitrum.io/rpc',
+    blockExplorer: 'https://arbiscan.io',
+    currency: 'ETH',
+    testnet: false,
+  },
+  {
+    chainId: '0x38',
+    name: 'BSC',
+    fullName: 'BNB Smart Chain',
+    rpcUrl: 'https://bsc-dataseed.binance.org',
+    blockExplorer: 'https://bscscan.com',
+    currency: 'BNB',
+    testnet: false,
   },
 ];
 
