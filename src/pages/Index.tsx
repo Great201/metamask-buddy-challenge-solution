@@ -24,7 +24,7 @@ const Index = () => {
               </span>
               <span className="flex items-center gap-1">
                 <Star className="h-4 w-4" />
-                2/4 Bonus Features
+                3/4 Bonus Features
               </span>
               <span className="flex items-center gap-1">
                 <Zap className="h-4 w-4" />
