@@ -180,7 +180,28 @@ export const useWallet = () => {
             });
             
             // After adding, try switching again
-            await switchNetwork(targetChainId);
+            try {
+              await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: targetChainId }],
+              });
+              
+              // Update chain ID and refresh balance
+              setWalletState(prev => ({
+                ...prev,
+                chainId: targetChainId,
+              }));
+              
+              if (walletState.address) {
+                getBalance(walletState.address);
+              }
+            } catch (switchError) {
+              console.error('Error switching to newly added network:', switchError);
+              setWalletState(prev => ({
+                ...prev,
+                error: 'Failed to switch to newly added network',
+              }));
+            }
           }
         } catch (addError) {
           console.error('Error adding network:', addError);
@@ -359,7 +380,7 @@ export const useWallet = () => {
         window.ethereum.removeListener('chainChanged', handleChainChanged);
       }
     };
-  }, [isMetamaskInstalled, handleAccountsChanged, handleChainChanged, getChainId, getBalance]);
+  }, [isMetamaskInstalled, handleAccountsChanged, handleChainChanged, getChainId]);
 
   return {
     ...walletState,
